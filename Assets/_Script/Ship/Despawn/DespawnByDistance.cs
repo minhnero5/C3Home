@@ -14,7 +14,7 @@ public class DespawnByDistance : DeSpawn
     protected virtual void LoadCamera()
     {
         if (this.mainCamTran != null) return;
-        this.mainCamTran = Transform.FindObjectOfType<Camera>().transform;
+        this.mainCamTran = Transform.FindAnyObjectByType<Camera>().transform;
         Debug.Log(transform.parent.name + ":Load Camera");
     }
     protected override bool CanDespawn()

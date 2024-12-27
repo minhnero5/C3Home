@@ -165,7 +165,6 @@ MonoBehaviour:
   isShooting: 0
   shootDelay: 1
   shootTimer: 1
-  bulletPrefab: {fileID: 245383715}
 --- !u!1 &245383714
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +623,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2105758711}
+  - {fileID: 1257711135}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1008233165
@@ -640,6 +640,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 245383715}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  poolObjs: []
+  holderPool: {fileID: 1257711135}
+--- !u!1 &1257711134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1257711135}
+  m_Layer: 0
+  m_Name: Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1257711135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257711134}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1008233164}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755401071
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +717,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755401071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7139b3b2680ae3d47a51b57f956a1b88, type: 3}
+  m_Script: {fileID: 11500000, guid: be17cbf48ab38474ebfe4f0fa591c6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disLimit: 70

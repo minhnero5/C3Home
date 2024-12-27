@@ -5,7 +5,7 @@ public class ShipShootingManager : MonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 1f;
     [SerializeField] protected float shootTimer = 0f;
-    [SerializeField] protected Transform bulletPrefab;
+    //[SerializeField] protected Transform bulletPrefab;
 
     private void Update()
     {
