@@ -4,7 +4,7 @@ public class BulletSpawner : Spawner
 {
     private static BulletSpawner instance;
 
-    public static BulletSpawner Instance { get => instance;}
+    public static BulletSpawner Instance { get => instance; }
 
     public static string bullet1 = "Bullet";
 
@@ -13,6 +13,6 @@ public class BulletSpawner : Spawner
         base.Awake();
         if (instance != null) Debug.LogError("There is more BulletSpawner than 1 instance");
         BulletSpawner.instance = this;
-        
+
     }
 }

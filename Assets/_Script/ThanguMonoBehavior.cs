@@ -9,6 +9,7 @@ public class ThanguMonoBehavior : MonoBehaviour
     protected void Reset()
     {
         this.LoadComponents();
+        this.ResetValue();
     }
 
     protected void Start()
@@ -16,6 +17,11 @@ public class ThanguMonoBehavior : MonoBehaviour
         
     }
     protected virtual void LoadComponents()
+    {
+        
+    }
+
+    protected virtual void ResetValue()
     {
         
     }
