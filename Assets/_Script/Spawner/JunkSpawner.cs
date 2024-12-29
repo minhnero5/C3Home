@@ -6,7 +6,7 @@ public class JunkSpawner : Spawner
 
     public static JunkSpawner Instance { get => instance; }
 
-    public static string bullet1 = "Junk";
+    public static string junk1 = "Junk";
 
     protected override void Awake()
     {
