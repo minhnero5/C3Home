@@ -12,6 +12,10 @@ public class ThanguMonoBehavior : MonoBehaviour
         this.ResetValue();
     }
 
+    protected virtual void OnEnable()
+    {
+        
+    }
     protected void Start()
     {
         

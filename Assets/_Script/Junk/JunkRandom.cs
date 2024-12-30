@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class JunkRandom : ThanguMonoBehavior
 {
-    [SerializeField] protected JunkController junkCtrl;
+    [SerializeField] protected JunkSpawnerController junkCtrl;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -12,7 +12,7 @@ public class JunkRandom : ThanguMonoBehavior
     protected virtual void LoadJunkController()
     {
         if (this.junkCtrl != null) return;
-        this.junkCtrl = GetComponent<JunkController>();
+        this.junkCtrl = GetComponent<JunkSpawnerController>();
         Debug.Log(transform.name + ": LoadJunkController", gameObject);
     }
 
