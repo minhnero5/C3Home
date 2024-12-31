@@ -16,7 +16,7 @@ public class ThanguMonoBehavior : MonoBehaviour
     {
         
     }
-    protected void Start()
+    protected virtual void Start()
     {
         
     }
