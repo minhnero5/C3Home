@@ -463,6 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageSender: {fileID: 1761381526}
+  bulletDeSpawner: {fileID: 1755401073}
 --- !u!1 &295490773
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 1698865357}
+  junkDespawn: {fileID: 1285666999}
 --- !u!1 &743970888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,11 +1035,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.16864169
+  m_Radius: 0.2
   m_Center: {x: 0.0095614195, y: 0, z: 0}
 --- !u!114 &743970891
 MonoBehaviour:
@@ -1048,11 +1050,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 743970888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f141af0678418a04abf047a2baaac572, type: 3}
+  m_Script: {fileID: 11500000, guid: 7773bf5a33e14794ba34fcf2d2628704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphereCollider: {fileID: 743970890}
   hp: 1
-  hpMax: 10
+  hpMax: 5
+  isDead: 0
+  junkController: {fileID: 645583567}
 --- !u!1 &960667680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,10 +1660,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1761381524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bb0e0f74357b36409f8010d04810943, type: 3}
+  m_Script: {fileID: 11500000, guid: 420d639b41c38464b8958b7c9a911660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  bulletController: {fileID: 245383716}
 --- !u!1 &1901882120
 GameObject:
   m_ObjectHideFlags: 0
