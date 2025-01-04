@@ -9,6 +9,8 @@ public abstract class Spawner : ThanguMonoBehavior
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
     [SerializeField] protected Transform holderPool;
+    [SerializeField] private int spawnerCount = 0;
+    public int SpawnerCount { get => spawnerCount; }
 
     protected override void LoadComponents()
     {
@@ -51,13 +53,20 @@ public abstract class Spawner : ThanguMonoBehavior
             Debug.LogWarning("Prefab not found" + prefabName);
             return null;
         }
+
+        return this.Spawn(prefab,spawnPos,rotation);
+    }
+
+    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    {
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
 
         newPrefab.parent = this.holderPool;
+        this.spawnerCount++;
         return newPrefab;
     }
-    
+
     protected virtual Transform GetObjectFromPool(Transform prefab)
     {
         foreach (Transform poolObj in this.poolObjs)
@@ -80,6 +89,7 @@ public abstract class Spawner : ThanguMonoBehavior
     {
         this.poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
+        this.spawnerCount--;
     }
     protected virtual Transform GetPrefabByName(string prefabName)
     {
@@ -88,5 +98,11 @@ public abstract class Spawner : ThanguMonoBehavior
             if(prefab.name == prefabName) return prefab;
         }
         return null;
+    }
+
+    public virtual Transform RandomPrefab()
+    {
+        int rand=Random.Range(0,this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }
