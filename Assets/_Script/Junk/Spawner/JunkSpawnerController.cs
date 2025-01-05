@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using UnityEngine;
 
 public class JunkSpawnerController : ThanguMonoBehavior
@@ -6,6 +7,7 @@ public class JunkSpawnerController : ThanguMonoBehavior
     [SerializeField] protected SpawnPoint spawnPoint;
     public JunkSpawner JunkSpawner { get => junkSpawner; }
     public SpawnPoint SpawnPoint { get => spawnPoint; }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();

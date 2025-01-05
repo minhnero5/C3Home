@@ -10,11 +10,15 @@ public class JunkController : ThanguMonoBehavior
 
     public JunkDespawn JunkDespawn { get => junkDespawn; }
 
+    [SerializeField] private JunkSO junkSO;
+
+    public JunkSO JunkSO => junkSO;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadJunkDeSpawner();
+        this.LoadJunkSO();
     }
 
     protected virtual void LoadModel()
@@ -30,4 +34,13 @@ public class JunkController : ThanguMonoBehavior
         this.junkDespawn = transform.GetComponentInChildren<JunkDespawn>();
         Debug.Log(transform.name + ": LoadJunkDeSpawner", gameObject);
     }
+
+    protected virtual void LoadJunkSO()
+    {
+        if (this.junkSO != null) return;
+        string resPath = "Junk/" + transform.name;
+        this.junkSO = Resources.Load<JunkSO>(resPath);
+        Debug.LogWarning(transform.name + ":Load JunkSO" + resPath, gameObject);
+    }
+
 }

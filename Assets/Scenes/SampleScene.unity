@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 16737971}
-  hp: 1
-  hpMax: 5
+  hp: 6
+  hpMax: 6
   isDead: 0
   junkController: {fileID: 312907120}
 --- !u!135 &16737971
@@ -667,6 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1687270248}
   junkDespawn: {fileID: 94272481}
+  junkSO: {fileID: 11400000, guid: c5a96e8302269ee40af682106a560287, type: 2}
 --- !u!1 &422398181
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 645583566}
+  - {fileID: 312907119}
   poolObjs: []
   holderPool: {fileID: 114337850}
   spawnerCount: 0
@@ -1168,7 +1170,7 @@ GameObject:
   - component: {fileID: 645583566}
   - component: {fileID: 645583567}
   m_Layer: 0
-  m_Name: Junk
+  m_Name: Junk_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,6 +1210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1698865357}
   junkDespawn: {fileID: 1285666999}
+  junkSO: {fileID: 11400000, guid: 16657b11e1424db46993e13059712c3d, type: 2}
 --- !u!1 &743970888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,8 +1278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 743970890}
-  hp: 1
-  hpMax: 5
+  hp: 4
+  hpMax: 4
   isDead: 0
   junkController: {fileID: 645583567}
 --- !u!1 &960667680
