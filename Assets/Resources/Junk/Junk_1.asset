@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Junk_1
   m_EditorClassIdentifier: 
   junkName: Junk_1
-  hpMax: 4
+  hpMax: 1

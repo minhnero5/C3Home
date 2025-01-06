@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class DamageReceiver : ThanguMonoBehavior
+public abstract class DamageReceiver : ThanguMonoBehavior
 {
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected int hp = 1;
@@ -66,8 +66,6 @@ public class DamageReceiver : ThanguMonoBehavior
         this.OnDead();
     }
 
-    protected virtual void OnDead()
-    {
-        //for Dead
-    }
+    protected abstract void OnDead();
+
 }
