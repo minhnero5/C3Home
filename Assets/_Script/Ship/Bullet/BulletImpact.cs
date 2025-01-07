@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
@@ -34,5 +35,21 @@ public class BulletImpact : BulletAbstract
     protected virtual void OnTriggerEnter(Collider other)
     {
         this.BulletController.DamageSender.Send(other.transform);
+        this.CreateFXImpact();
+    }
+
+    protected virtual void CreateFXImpact()
+    {
+        string fxName = this.GetImpactFX();
+
+        Vector3 hitPos = transform.position;
+        quaternion hitRos = transform.rotation;
+        Transform fxImpact = FXSpawner.Instance.Spawn(fxName, hitPos, hitRos);
+        fxImpact.gameObject.SetActive(true);
+    }
+
+    protected virtual string GetImpactFX()
+    {
+        return FXSpawner.impact1;
     }
 }
