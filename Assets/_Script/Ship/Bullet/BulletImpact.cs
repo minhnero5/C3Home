@@ -34,6 +34,8 @@ public class BulletImpact : BulletAbstract
 
     protected virtual void OnTriggerEnter(Collider other)
     {
+        if (other.transform.parent == this.BulletController.Shooter) return;
+
         this.BulletController.DamageSender.Send(other.transform);
         this.CreateFXImpact();
     }

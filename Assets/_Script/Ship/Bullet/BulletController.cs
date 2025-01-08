@@ -8,6 +8,10 @@ public class BulletController : ThanguMonoBehavior
   
     [SerializeField] private BulletDespawn bulletDeSpawner;
     public BulletDespawn BulletDeSpawner { get => bulletDeSpawner; }
+
+    [SerializeField] private Transform shooter;
+
+    public Transform Shooter => shooter;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -27,5 +31,10 @@ public class BulletController : ThanguMonoBehavior
         if (bulletDeSpawner) return;
         this.bulletDeSpawner = transform.GetComponentInChildren<BulletDespawn>();
         Debug.Log(transform.name + ": LoadBulletSpawner", gameObject);
+    }
+
+    public virtual void SetShooter(Transform shooter)
+    {
+        this.shooter = shooter;
     }
 }
