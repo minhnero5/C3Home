@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8c8d7d88b1d5c4783b22c89b978241, type: 3}
   m_Name: Junk_1
   m_EditorClassIdentifier: 
-  junkName: Junk_1
+  junkName: Junk
   hpMax: 1
+  dropList:
+  - itemSO: {fileID: 11400000, guid: a2c2696ec29fbd1498c8b063fa398adb, type: 2}
+    dropRate: 100000
+    minDrop: 0
+    maxDrop: 0
