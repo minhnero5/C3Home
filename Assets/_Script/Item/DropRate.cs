@@ -4,7 +4,7 @@ using System;
 [Serializable]
 public class DropRate
 {
-    public ItemSO itemSO;
+    public ItemProfileSO itemProfileSO;
     public int dropRate;
     public int minDrop;
     public int maxDrop;
