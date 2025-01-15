@@ -20,7 +20,7 @@ public class ItemLooter : ThanguMonoBehavior
     protected virtual void LoadInventory()
     {
         if (this.inventory != null) return;
-        this.inventory= transform.parent.GetComponent<Inventory>();
+        this.inventory = transform.parent.GetComponent<Inventory>();
         Debug.LogWarning(transform.name + ": LoadInventory", gameObject);
     }
 
@@ -46,6 +46,12 @@ public class ItemLooter : ThanguMonoBehavior
     {
         ItemPickupable itemPickupable = other.GetComponent<ItemPickupable>();
         if (itemPickupable == null) return;
+
+        ItemCode itemCode = itemPickupable.GetItemCode();
+        if (this.inventory.AddItem(itemCode, 1))
+        {
+            itemPickupable.Picked();
+        }
         Debug.Log("co the pick");
     }
 }

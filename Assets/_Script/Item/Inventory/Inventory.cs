@@ -13,7 +13,7 @@ public class Inventory : ThanguMonoBehavior
         this.AddItem(ItemCode.IronOre, 3);
     }
 
-    protected virtual bool AddItem(ItemCode itemCode,int addCount)
+    public virtual bool AddItem(ItemCode itemCode,int addCount)
     {
         ItemInventory itemInventory = this.GetItemByCode(itemCode);
 
