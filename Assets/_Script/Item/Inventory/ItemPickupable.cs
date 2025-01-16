@@ -22,7 +22,7 @@ public class ItemPickupable : JunkAbstract
         if (_collider != null) return;
         this._collider = transform.GetComponent<SphereCollider>();
         this._collider.isTrigger = true;
-        this._collider.radius = 0.1f;
+        this._collider.radius = 0.2f;
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
 
     }
@@ -35,5 +35,10 @@ public class ItemPickupable : JunkAbstract
     public virtual void Picked()
     {
         this.JunkController.JunkDespawn.DespawnObject();
+    }
+
+    protected virtual void OnMouseDown()
+    {
+        PlayerController.Instance.PlayerPickup.ItemPickup(this);
     }
 }
