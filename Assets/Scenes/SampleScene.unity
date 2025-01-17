@@ -764,12 +764,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 309700920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a7fdcd070ffc84c94e3f449d6258f3, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e5c77624f8e4440936cee18cf47fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1574713170}
-  junkDespawn: {fileID: 1717416475}
-  junkSO: {fileID: 11400000, guid: c5a96e8302269ee40af682106a560287, type: 2}
+  itemDespawn: {fileID: 1717416475}
 --- !u!1 &312907118
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffab0b049a1ac34d8851fe1d2422fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkController: {fileID: 1463388867}
+  itemController: {fileID: 1463388867}
   _collider: {fileID: 485270806}
 --- !u!135 &485270806
 SphereCollider:
@@ -1652,7 +1650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758894496}
-  - component: {fileID: 758894495}
+  - component: {fileID: 758894497}
   m_Layer: 0
   m_Name: Despawn
   m_TagString: Untagged
@@ -1660,21 +1658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &758894495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758894494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84f59378be9e754f967792a54638dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disLimit: 30
-  distance: 0
-  mainCamTran: {fileID: 519420032}
 --- !u!4 &758894496
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,6 +1673,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1463388866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758894497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758894494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c51516dbc5eff4d8c18d5ff33bf4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disLimit: 70
+  distance: 0
+  mainCamTran: {fileID: 519420032}
 --- !u!1 &892203723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2182,7 @@ Transform:
   m_GameObject: {fileID: 1463388865}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.916, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2202,12 +2200,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1463388865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a7fdcd070ffc84c94e3f449d6258f3, type: 3}
+  m_Script: {fileID: 11500000, guid: f4e5c77624f8e4440936cee18cf47fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 613283570}
-  junkDespawn: {fileID: 758894495}
-  junkSO: {fileID: 11400000, guid: 16657b11e1424db46993e13059712c3d, type: 2}
+  itemDespawn: {fileID: 758894497}
 --- !u!1 &1564561419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,10 +2874,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717416473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84f59378be9e754f967792a54638dc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 72c51516dbc5eff4d8c18d5ff33bf4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 30
+  disLimit: 70
   distance: 0
   mainCamTran: {fileID: 519420032}
 --- !u!1 &1755401071
@@ -3102,7 +3098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffab0b049a1ac34d8851fe1d2422fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkController: {fileID: 309700922}
+  itemController: {fileID: 309700922}
   _collider: {fileID: 1903317155}
 --- !u!135 &1903317155
 SphereCollider:

@@ -47,6 +47,6 @@ public class JunkDamageReceiver : DamageReceiver
     {
         this.hpMax = this.junkController.JunkSO.hpMax;
         base.Reborn();
-        Debug.Log("Reborn",gameObject);
+        //Debug.Log("Reborn",gameObject);
     }
 }
