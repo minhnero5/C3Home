@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8c8d7d88b1d5c4783b22c89b978241, type: 3}
-  m_Name: Junk_3
+  m_Script: {fileID: 11500000, guid: e10e57dfddf75ce47b824e7ce4b50e03, type: 3}
+  m_Name: CopperSword
   m_EditorClassIdentifier: 
-  junkName: Junk_3
-  hpMax: 7
-  dropList:
-  - itemProfileSO: {fileID: 11400000, guid: 88bc01975ff7e474bbab5aef314d0d2a, type: 2}
-    dropRate: 10000
-    minDrop: 0
-    maxDrop: 0
+  itemCode: 3
+  itemType: 2
+  itemName: CopperSword
+  defaultMaxStack: 1
