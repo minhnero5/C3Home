@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -8,4 +10,5 @@ public class ItemProfileSO : ScriptableObject
     public ItemType itemType = ItemType.NoType;
     public string itemName = "no-name";
     public int defaultMaxStack = 7;
+    public List<ItemRecipe> upgradeLevel;
 }

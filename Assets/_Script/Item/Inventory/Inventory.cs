@@ -5,7 +5,9 @@ using UnityEngine;
 public class Inventory : ThanguMonoBehavior
 {
     [SerializeField] protected int maxSlot = 70;
-    [SerializeField] protected List<ItemInventory> items;
+    [SerializeField] private List<ItemInventory> items;
+
+    public List<ItemInventory> Items => items;
 
     protected override void Start()
     {
@@ -108,9 +110,24 @@ public class Inventory : ThanguMonoBehavior
 
         return itemInventory;
     }
- 
 
+    public virtual bool ItemCheck(ItemCode itemCode,int numberCheck)
+    {
+        int totalcount = this.ItemTotalCount(itemCode);
+        return totalcount >= numberCheck;
+    }
 
+    protected virtual int ItemTotalCount(ItemCode itemCode)
+    {
+        int totalCount = 0;
+        foreach (ItemInventory item in this.Items)
+        {
+            if (item.itemProfileSO.itemCode != itemCode) continue;
+            totalCount += item.itemCount;
+        }
+
+        return totalCount;
+    }
 
     //public virtual bool AddItem(ItemCode itemCode,int addCount)
     //{
