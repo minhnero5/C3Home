@@ -12,8 +12,8 @@ public class Inventory : ThanguMonoBehavior
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.IronOre, 3);
         this.AddItem(ItemCode.CopperSword, 3);
+        this.AddItem(ItemCode.IronOre, 8);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
@@ -128,6 +128,33 @@ public class Inventory : ThanguMonoBehavior
 
         return totalCount;
     }
+
+    public virtual void DeductItem(ItemCode itemCode,int deductCount)
+    {
+        ItemInventory itemInventory;
+        int deduct;
+        for (int i = this.Items.Count-1; i>=0; i--)
+        {
+            if (deductCount <= 0) break;
+
+            itemInventory = this.Items[i];
+            if (itemInventory.itemProfileSO.itemCode != itemCode) continue;
+
+            if (deductCount > itemInventory.itemCount)
+            {
+                deduct = itemInventory.itemCount;
+                deductCount -= itemInventory.itemCount;
+            }
+            else
+            {
+                deduct = deductCount;
+                deductCount = 0;
+            }
+
+            itemInventory.itemCount -= deduct;
+        }
+    }
+
 
     //public virtual bool AddItem(ItemCode itemCode,int addCount)
     //{

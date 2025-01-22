@@ -19,4 +19,4 @@ MonoBehaviour:
   upgradeLevel:
   - ingredients:
     - itemProfileSO: {fileID: 11400000, guid: 687a6570e66ce12428c279bd21b87c5b, type: 2}
-      itemCount: 0
+      itemCount: 2
