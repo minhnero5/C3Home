@@ -26,7 +26,7 @@ public class ItemUpgrade : InventoryAbstract
         if (itemInventory.itemCount < 1) return false;
 
         List<ItemRecipe> upgradeLevel = itemInventory.itemProfileSO.upgradeLevel;
-        if(!this.ItemUpgradeable(upgradeLevel))return false;
+        if (!this.ItemUpgradeable(upgradeLevel)) return false;
         if (!this.HaveEnoughIngredients(upgradeLevel, itemInventory.upgradeLevel)) return false ;
 
         this.DeductIngredients(upgradeLevel,itemInventory.upgradeLevel);
@@ -46,7 +46,7 @@ public class ItemUpgrade : InventoryAbstract
         ItemCode itemCode;
         int itemCount;
 
-        if(currentLevel>upgradeLevel.Count)
+        if(currentLevel > upgradeLevel.Count)
         {
             Debug.Log("Item can't not upgrade anymore,current: " + currentLevel);
             return false;
@@ -64,12 +64,12 @@ public class ItemUpgrade : InventoryAbstract
         return true;
     }
 
-    protected virtual void DeductIngredients(List<ItemRecipe> upgradeLevel,int currentLeve)
+    protected virtual void DeductIngredients(List<ItemRecipe> upgradeLevel,int currentLevel)
     {
         ItemCode itemCode;
         int itemCount;
 
-        ItemRecipe currentRecipeLevel = upgradeLevel[currentLeve];
+        ItemRecipe currentRecipeLevel = upgradeLevel[currentLevel];
         foreach (ItemRecipeIngredient ingredient in currentRecipeLevel.ingredients)
         {
             itemCode = ingredient.itemProfileSO.itemCode;
