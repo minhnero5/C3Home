@@ -11,4 +11,16 @@ public class ItemProfileSO : ScriptableObject
     public string itemName = "no-name";
     public int defaultMaxStack = 7;
     public List<ItemRecipe> upgradeLevel;
+
+
+    public static ItemProfileSO FindByItemcode(ItemCode itemCode)
+    {
+        var profiles = Resources.LoadAll("Item", typeof(ItemProfileSO));
+        foreach (ItemProfileSO profile in profiles)
+        {
+            if (profile.itemCode != itemCode) continue;
+            return profile;
+        }
+        return null;
+    }
 }

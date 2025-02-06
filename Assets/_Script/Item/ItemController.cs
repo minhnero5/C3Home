@@ -14,6 +14,7 @@ public class ItemController : ThanguMonoBehavior
     {
         base.LoadComponents();
         this.LoadItemDespawn();
+        this.LoadItemInventory();
     }
     protected virtual void LoadItemDespawn()
     {
@@ -25,5 +26,15 @@ public class ItemController : ThanguMonoBehavior
     public virtual void SetItemInventory(ItemInventory itemInventory)
     {
         this.itemInventory = itemInventory;
+    }
+
+    protected virtual void LoadItemInventory()
+    { 
+        if(this.itemInventory.itemProfileSO != null) return;
+        ItemCode itemCode=ItemCodeParser.FromString(transform.name);
+        ItemProfileSO itemProfileSO=ItemProfileSO.FindByItemcode(itemCode);
+        this.itemInventory.itemProfileSO = itemProfileSO;
+        this.itemInventory.itemCount = 1;
+        
     }
 }
