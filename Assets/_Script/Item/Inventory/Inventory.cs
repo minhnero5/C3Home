@@ -32,10 +32,12 @@ public class Inventory : ThanguMonoBehavior
     public virtual bool AddEquiment(ItemInventory itemPicked)
     {
         if (this.IsInventoryFull()) return false;
-        ItemInventory item = new ItemInventory();
-        item.itemProfileSO = itemPicked.itemProfileSO;
-        item.itemCount = itemPicked.itemCount;
-        item.upgradeLevel = itemPicked.upgradeLevel;
+        ItemInventory item = itemPicked.Clone();
+
+        //ItemInventory item = new ItemInventory();
+        //item.itemProfileSO = itemPicked.itemProfileSO;
+        //item.itemCount = itemPicked.itemCount;
+        //item.upgradeLevel = itemPicked.upgradeLevel;
         this.items.Add(itemPicked);
         return true;
     }

@@ -20,7 +20,7 @@ public class ItemController : ThanguMonoBehavior
     protected override void OnEnable()
     {
         base.OnEnable();
-        this.ResetItem()
+        this.ResetItem();
     }
 
     protected virtual void LoadItemDespawn()
@@ -32,10 +32,11 @@ public class ItemController : ThanguMonoBehavior
 
     public virtual void SetItemInventory(ItemInventory itemInventory)
     {
-        this.itemInventory = new ItemInventory();
-        this.itemInventory.itemProfileSO = itemInventory.itemProfileSO;
-        this.itemInventory.itemCount = itemInventory.itemCount;
-        this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
+        this.itemInventory = itemInventory.Clone();
+        //this.itemInventory = new ItemInventory();
+        //this.itemInventory.itemProfileSO = itemInventory.itemProfileSO;
+        //this.itemInventory.itemCount = itemInventory.itemCount;
+        //this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
     }
 
     protected virtual void LoadItemInventory()
