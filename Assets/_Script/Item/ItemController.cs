@@ -16,6 +16,13 @@ public class ItemController : ThanguMonoBehavior
         this.LoadItemDespawn();
         this.LoadItemInventory();
     }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.ResetItem()
+    }
+
     protected virtual void LoadItemDespawn()
     {
         if (this.itemDespawn != null) return;
@@ -25,7 +32,10 @@ public class ItemController : ThanguMonoBehavior
 
     public virtual void SetItemInventory(ItemInventory itemInventory)
     {
-        this.itemInventory = itemInventory;
+        this.itemInventory = new ItemInventory();
+        this.itemInventory.itemProfileSO = itemInventory.itemProfileSO;
+        this.itemInventory.itemCount = itemInventory.itemCount;
+        this.itemInventory.upgradeLevel = itemInventory.upgradeLevel;
     }
 
     protected virtual void LoadItemInventory()
@@ -34,7 +44,13 @@ public class ItemController : ThanguMonoBehavior
         ItemCode itemCode=ItemCodeParser.FromString(transform.name);
         ItemProfileSO itemProfileSO=ItemProfileSO.FindByItemcode(itemCode);
         this.itemInventory.itemProfileSO = itemProfileSO;
-        this.itemInventory.itemCount = 1;
+        this.ResetItem();
         
+    }
+
+    protected virtual void ResetItem()
+    {
+        this.itemInventory.itemCount = 1;
+        this.itemInventory.upgradeLevel = 0;
     }
 }

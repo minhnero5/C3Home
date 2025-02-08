@@ -29,10 +29,14 @@ public class Inventory : ThanguMonoBehavior
         return this.AddItem(itemCode,addCount);
     }
 
-    public virtual bool AddEquiment(ItemInventory itemInventory)
+    public virtual bool AddEquiment(ItemInventory itemPicked)
     {
         if (this.IsInventoryFull()) return false;
-        this.items.Add(itemInventory);
+        ItemInventory item = new ItemInventory();
+        item.itemProfileSO = itemPicked.itemProfileSO;
+        item.itemCount = itemPicked.itemCount;
+        item.upgradeLevel = itemPicked.upgradeLevel;
+        this.items.Add(itemPicked);
         return true;
     }
 
