@@ -30,7 +30,7 @@ public class PlayerController : ThanguMonoBehavior
     protected virtual void LoadPlayerPickup()
     {
         if (this.playerPickup != null) return;
-        this.playerPickup=transform.GetComponentInChildren<PlayerPickup>();
+        this.playerPickup = transform.GetComponentInChildren<PlayerPickup>();
         Debug.Log(transform.name + ": Load PlayerPick", gameObject);
     }
 }
