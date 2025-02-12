@@ -10,9 +10,9 @@ public class JunkController : ThanguMonoBehavior
 
     public JunkDespawn JunkDespawn { get => junkDespawn; }
 
-    [SerializeField] private JunkSO junkSO;
+    [SerializeField] private ShootableObjectSO shootableObject;
 
-    public JunkSO JunkSO => junkSO;
+    public ShootableObjectSO ShootableObject => shootableObject;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -37,10 +37,10 @@ public class JunkController : ThanguMonoBehavior
 
     protected virtual void LoadJunkSO()
     {
-        if (this.junkSO != null) return;
-        string resPath = "Junk/" + transform.name;
-        this.junkSO = Resources.Load<JunkSO>(resPath);
-        Debug.LogWarning(transform.name + ":Load JunkSO" + resPath, gameObject);
+        if (this.shootableObject != null) return;
+        string resPath = "ShootableObject/Junk/" + transform.name;
+        this.shootableObject = Resources.Load<ShootableObjectSO>(resPath);
+        Debug.LogWarning(transform.name + ":Load ShootableObjectSO" + resPath, gameObject);
     }
 
 }
