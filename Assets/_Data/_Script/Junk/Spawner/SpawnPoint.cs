@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class SpawnPoint : ThanguMonoBehavior
+public class SpawnPoint : ThanguMonoBehavior
 {
     [SerializeField] protected List<Transform> points;
 
