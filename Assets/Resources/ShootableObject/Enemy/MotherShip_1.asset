@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6f5d08173aa94f43bbc52090a65a5a2, type: 3}
-  m_Name: Enemy_1
+  m_Name: MotherShip_1
   m_EditorClassIdentifier: 
-  objName: Shootable
-  objType: 0
-  hpMax: 2
+  objName: MotherShip_1
+  objType: 2
+  hpMax: 200
   dropList:
-  - itemProfileSO: {fileID: 11400000, guid: 687a6570e66ce12428c279bd21b87c5b, type: 2}
+  - itemProfileSO: {fileID: 11400000, guid: 1314b9f7ce753b247ae00e5eba6d8967, type: 2}
     dropRate: 0
     minDrop: 0
     maxDrop: 0

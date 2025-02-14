@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShipShootingManager : MonoBehaviour
+public abstract class ShipShootingManager : ThanguMonoBehavior
 {
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 1f;
@@ -33,9 +33,6 @@ public class ShipShootingManager : MonoBehaviour
         bulletController.SetShooter(transform.parent);
     }
 
-    protected virtual bool IsShooting()
-    {
-        this.isShooting = InputManager.Instance.OnFiring == 1;
-        return this.isShooting;
-    }
+    protected abstract bool IsShooting();
+
 }
