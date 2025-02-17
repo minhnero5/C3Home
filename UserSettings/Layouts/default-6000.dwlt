@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -492,8 +492,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -506,18 +506,18 @@ MonoBehaviour:
       y: 21
       width: 1678
       height: 915
-    m_Scale: {x: 1.296575, y: 1.296575}
-    m_Translation: {x: 831.5396, y: 446.88992}
+    m_Scale: {x: 0.8472222, y: 0.8472222}
+    m_Translation: {x: 839, y: 457.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -641.3356
-      y: -344.66956
-      width: 1294.179
-      height: 705.70544
+      x: -990.2951
+      y: -540
+      width: 1980.5902
+      height: 1080
     m_MinimalGUI: 1
   m_defaultScale: 0.8472222
   m_LastWindowPixelSize: {x: 1678, y: 936}
@@ -573,7 +573,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Data/_Script/Ship
+    - Assets/DKP_PixelArt/PixelArtStarshipPackage_TerranFleet/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -583,16 +583,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Data/_Script/Ship
+  - Assets/DKP_PixelArt/PixelArtStarshipPackage_TerranFleet/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\C3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 179}
-    m_SelectedIDs: 0eb50000
-    m_LastClickedID: 46350
-    m_ExpandedIDs: 00000000c2b20000c4b20000c6b20000c8b20000cab20000ccb20000ceb20000d0b20000d2b20000d4b20000d6b20000d8b20000dab20000dcb20000deb20000e0b20000
+    scrollPos: {x: 0, y: 339}
+    m_SelectedIDs: dcb60000
+    m_LastClickedID: 46812
+    m_ExpandedIDs: 00000000bab20000bcb20000beb20000c0b20000c2b20000c4b20000c6b20000c8b20000cab20000ccb20000ceb20000d0b20000d2b20000d4b20000d6b20000d8b20000dab20000dcb20000deb20000e0b20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -621,7 +621,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2b20000c4b20000c6b20000c8b20000cab20000ccb20000ceb20000d0b20000d2b20000d4b20000d6b20000d8b20000dab20000dcb20000deb20000e0b20000
+    m_ExpandedIDs: 00000000bab20000bcb20000beb20000c0b20000c2b20000c4b20000c6b20000c8b20000cab20000ccb20000ceb20000d0b20000d2b20000d4b20000d6b20000d8b20000dab20000dcb20000deb20000e0b20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -650,7 +650,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000000000000fa5d0000dc6f0000ec9d00009c9f000006b2000052b10000c2af000084b2000088b20000ccb50000f0b2000014b1000012b1000058b2000082d70000f2b10000fcb10000
+    m_ExpandedInstanceIDs: c623000000000000fa5d0000dc6f0000ec9d00009c9f000006b2000052b10000c2af000084b2000088b20000ccb50000f0b2000014b1000012b1000058b2000082d70000f2b10000fcb100006eb50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -720,7 +720,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0ce0ffffe2faffffd8af000018b00000e8b000001ab100006ab10000
+      m_ExpandedIDs: e2faffff4ab000006eb1000090b10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1380,9 +1380,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.66506684, y: 0.033149805, z: 0.004681023}
+    m_Target: {x: -0.80708766, y: -0.39434892, z: -0.048528306}
     speed: 2
-    m_Value: {x: 0.66506684, y: 0.033149805, z: 0.004681023}
+    m_Value: {x: -0.80708766, y: -0.39434892, z: -0.048528306}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 2
@@ -1432,9 +1432,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.0510927
+    m_Target: 6.3720236
     speed: 2
-    m_Value: 1.0510927
+    m_Value: 6.3720236
   m_Ortho:
     m_Target: 1
     speed: 2

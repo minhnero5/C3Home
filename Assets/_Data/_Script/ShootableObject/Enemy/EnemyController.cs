@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : ShootableObjectController
+public class EnemyController : AbilityObjectController
 {
     protected override string GetObjectTypeString()
     {

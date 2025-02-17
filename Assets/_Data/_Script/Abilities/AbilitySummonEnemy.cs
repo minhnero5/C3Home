@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class AbilitySummon : BaseAbilities
+public class AbilitySummonEnemy :AbilitySummon 
 {
-    [SerializeField] protected Spawner spawner ;
+   
 
 
     protected override void FixedUpdate()
@@ -10,6 +10,18 @@ public class AbilitySummon : BaseAbilities
         base.FixedUpdate();
         this.Summoning();
     }
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadEnemySpawner();
+    }
+    protected virtual void LoadEnemySpawner()
+    {
+        if (this.spawner != null) return;
+        GameObject enemySpawner = GameObject.Find("EnemySpawner");
+        this.spawner = enemySpawner.GetComponent<EnemySpawner>();
+        Debug.Log(transform.name + ": LoadEnemySpawner", gameObject);
+    } 
 
     protected virtual void Summoning()
     {
