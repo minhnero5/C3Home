@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ShipFollowTarget : ShipMovement
+public class ShipFollowTarget : ObjectMovement
 {
 
     [SerializeField] protected Transform target;

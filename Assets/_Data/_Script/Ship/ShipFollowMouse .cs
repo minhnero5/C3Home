@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ShipFollowMouse : ShipMovement
+public class ShipFollowMouse : ObjectMovement
 {
 
 

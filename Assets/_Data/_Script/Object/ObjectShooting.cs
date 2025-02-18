@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ShipShootingManager : ThanguMonoBehavior
+public abstract class ObjectShooting : ThanguMonoBehavior
 {
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 1f;

@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-public class ShipShootByDistance : ShipShootingManager
+public class ShipShootByDistance : ObjectShooting
 {
     [SerializeField] protected Transform target;
     [SerializeField] protected float distance = Mathf.Infinity;

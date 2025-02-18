@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ShipMovement : ThanguMonoBehavior
+public class ObjectMovement : ThanguMonoBehavior
 {
 
     [SerializeField] protected Vector3 targetPosition;
