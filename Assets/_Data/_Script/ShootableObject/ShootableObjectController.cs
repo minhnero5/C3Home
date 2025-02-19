@@ -14,12 +14,17 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
 
     public ShootableObjectSO ShootableObject => shootableObject;
 
+    [SerializeField] private ObjectShooting objectShooting;
+
+    public ObjectShooting ObjectShooting => objectShooting;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadDeSpawner();
         this.LoadSO();
+        this.LoadObjectShooting();
     }
 
     protected virtual void LoadModel()
@@ -28,7 +33,12 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         this.model = transform.Find("Model");
         Debug.Log(transform.name + ": LoadModel", gameObject);
     }
-
+    protected virtual void LoadObjectShooting()
+    {
+        if (this.objectShooting != null) return;
+        this.objectShooting = GetComponentInChildren<ObjectShooting>();
+        Debug.Log(transform.name + ": LoadObjectShooting", gameObject);
+    }
     protected virtual void LoadDeSpawner()
     {
         if (this.despawn != null) return;

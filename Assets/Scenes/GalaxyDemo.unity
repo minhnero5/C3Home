@@ -475,6 +475,7 @@ MonoBehaviour:
   model: {fileID: 1753941598}
   despawn: {fileID: 1044439430}
   shootableObject: {fileID: 11400000, guid: a55280566f4abdb41b31c0be73ef4c55, type: 2}
+  objectShooting: {fileID: 0}
   spawnPoint: {fileID: 470844660}
 --- !u!4 &72278087
 Transform:
@@ -2064,7 +2065,7 @@ GameObject:
   - component: {fileID: 600707610}
   - component: {fileID: 600707611}
   m_Layer: 0
-  m_Name: ShipMovement
+  m_Name: ObjMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2705,7 +2706,7 @@ GameObject:
   - component: {fileID: 835166844}
   - component: {fileID: 835166845}
   m_Layer: 0
-  m_Name: ShipShooting
+  m_Name: ObjShooting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4429,6 +4430,7 @@ MonoBehaviour:
   model: {fileID: 483564656}
   despawn: {fileID: 1515436895}
   shootableObject: {fileID: 11400000, guid: 178b352e4bde6f84fb17a5b3ea29d849, type: 2}
+  objectShooting: {fileID: 0}
   spawnPoint: {fileID: 0}
 --- !u!4 &1626118088
 Transform:
@@ -4461,6 +4463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1627326200}
   - component: {fileID: 1627326201}
+  - component: {fileID: 1627326202}
   m_Layer: 0
   m_Name: ObjAppearing
   m_TagString: Untagged
@@ -4501,6 +4504,20 @@ MonoBehaviour:
   startScale: 0.1
   maxScale: 1
   speedScale: 0.01
+--- !u!114 &1627326202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627326199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe016c018da54b4ea4196f1e36c671f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootableObjectController: {fileID: 1742067845}
+  objectAppearing: {fileID: 1627326201}
 --- !u!1 &1658123787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,7 +5002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742067842}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5013,6 +5030,7 @@ MonoBehaviour:
   model: {fileID: 4803366452139964}
   despawn: {fileID: 510648307}
   shootableObject: {fileID: 11400000, guid: 50acdc77b521ecf43b8483eda234839c, type: 2}
+  objectShooting: {fileID: 835166845}
   spawnPoint: {fileID: 0}
 --- !u!1 &1753941597
 GameObject:

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectAppearing1Bigger : ObjectAppearing
+public class ObjectAppearingBigger : ObjectAppearing
 {
     [SerializeField] protected float currentScale = 0f;
     [SerializeField] protected float startScale = 0.1f;
