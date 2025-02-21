@@ -1,11 +1,13 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ObjectMovement : ThanguMonoBehavior
 {
 
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] protected float speed = 0.1f;
+    [SerializeField] protected float speed = 0.01f;
+    [SerializeField] protected float rotSpeed = 0.001f;
     [SerializeField] protected float distance = 1;
     [SerializeField] protected float minDistance = 1;
 
@@ -23,7 +25,12 @@ public class ObjectMovement : ThanguMonoBehavior
         Vector3 diff = this.targetPosition - transform.parent.position;
         diff.Normalize();
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.parent.rotation = Quaternion.Euler(0, 0, rot_z);
+
+        float timeSpeed = this.rotSpeed * Time.fixedDeltaTime;
+        Quaternion targetEuler = Quaternion.Euler(0, 0, rot_z);
+        Quaternion currentEuler = Quaternion.Lerp(transform.parent.rotation, targetEuler, timeSpeed);
+
+        transform.parent.rotation = currentEuler;
 
     }
     protected virtual void Moving()
