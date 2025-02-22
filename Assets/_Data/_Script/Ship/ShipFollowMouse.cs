@@ -4,7 +4,6 @@ using UnityEngine;
 public class ShipFollowMouse : ObjectMovement
 {
 
-
     protected override void FixedUpdate()
     {
         this.GetMousePosition();
