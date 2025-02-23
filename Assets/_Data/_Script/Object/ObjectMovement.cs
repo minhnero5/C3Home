@@ -17,6 +17,10 @@ public class ObjectMovement : ThanguMonoBehavior
         this.Moving();
     }
 
+    public virtual void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
 
     protected virtual void Moving()
     {

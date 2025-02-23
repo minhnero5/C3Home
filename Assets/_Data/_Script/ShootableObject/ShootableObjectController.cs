@@ -18,6 +18,13 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
 
     public ObjectShooting ObjectShooting => objectShooting;
 
+    [SerializeField] private ObjectMovement objectMovement;
+
+    public ObjectMovement ObjectMovement => objectMovement;
+
+    [SerializeField] private ObjectLookAtTarget objectLookAtTarget;
+
+    public ObjectLookAtTarget ObjectLookAtTarget => objectLookAtTarget;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -25,6 +32,8 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         this.LoadDeSpawner();
         this.LoadSO();
         this.LoadObjectShooting();
+        this.LoadObjMovement();
+        this.LoadObjLookAtTarget();
     }
 
     protected virtual void LoadModel()
@@ -39,6 +48,21 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         this.objectShooting = GetComponentInChildren<ObjectShooting>();
         Debug.Log(transform.name + ": LoadObjectShooting", gameObject);
     }
+
+    protected virtual void LoadObjMovement()
+    {
+        if (this.objectMovement != null) return;
+        this.objectMovement = GetComponentInChildren<ObjectMovement>();
+        Debug.LogWarning(transform.name + ": LoadObjMovement", gameObject);
+    }
+
+    protected virtual void LoadObjLookAtTarget()
+    {
+        if (this.objectLookAtTarget != null) return;
+        this.objectLookAtTarget = GetComponentInChildren<ObjectLookAtTarget>();
+        Debug.LogWarning(transform.name + ": LoadObjLookAtTarget", gameObject);
+    }
+
     protected virtual void LoadDeSpawner()
     {
         if (this.despawn != null) return;

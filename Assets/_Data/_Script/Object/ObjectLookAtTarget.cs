@@ -16,6 +16,10 @@ public class ObjectLookAtTarget : ThanguMonoBehavior
        
     }
 
+    public virtual void SetRotationSpeed(float speedRot)
+    {
+        this.rotSpeed = speedRot;
+    }
 
 
     protected virtual void LookAtTarget()
