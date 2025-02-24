@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShooting: 0
-  shootDelay: 0.5
+  shootDelay: 0.1
   shootTimer: 0
 --- !u!1 &16737968
 GameObject:
@@ -3953,6 +3953,8 @@ MonoBehaviour:
   delay: 2
   isRead: 0
   spawner: {fileID: 408953641}
+  minions: []
+  minionsLimit: 2
 --- !u!1 &1433866535
 GameObject:
   m_ObjectHideFlags: 0

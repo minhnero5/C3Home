@@ -30,10 +30,12 @@ public class ObjectAppearWithoutShoot : ShootableObjectAbstract,IObjectAppearObs
     public void OnAppearStart()
     {
         this.ShootableObjectController.ObjectShooting.gameObject.SetActive(false);
+        this.ShootableObjectController.ObjectLookAtTarget.gameObject.SetActive(false);
     }
 
     public void OnAppearFinish()
     {
         this.ShootableObjectController.ObjectShooting.gameObject.SetActive(true);
+        this.ShootableObjectController.ObjectLookAtTarget.gameObject.SetActive(true);
     }
 }

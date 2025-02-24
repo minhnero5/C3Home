@@ -1,14 +1,18 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilitySummonEnemy :AbilitySummon 
 {
-   
+    [SerializeField] protected List<Transform> minions;
+    [SerializeField] protected int minionsLimit = 2;
+
 
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        this.Summoning();
+        this.ClearDeadMinions();
     }
     protected override void LoadComponents()
     {
@@ -21,20 +25,32 @@ public class AbilitySummonEnemy :AbilitySummon
         GameObject enemySpawner = GameObject.Find("EnemySpawner");
         this.spawner = enemySpawner.GetComponent<EnemySpawner>();
         Debug.Log(transform.name + ": LoadEnemySpawner", gameObject);
-    } 
-
-    protected virtual void Summoning()
-    {
-        if (!this.isRead) return;
-        this.Summon();
     }
 
-    protected virtual void Summon()
+    protected override void Summoning()
     {
-        Transform minionPrefab = this.spawner.RandomPrefab();
-        Transform minion = this.spawner.Spawn(minionPrefab, transform.position, transform.rotation);
-        minion.gameObject.SetActive(true);
-        this.Active();
+        if (this.minions.Count >= this.minionsLimit) return;
+        base.Summoning();
+    }
+    protected override Transform Summon()
+    {
+        
+        Transform minion = base.Summon();
+        minion.parent = this.abilities.AbilityController.transform;
+        this.minions.Add(minion);
+        return minion;
+       
     }
 
+    protected virtual void ClearDeadMinions()
+    {
+        foreach (Transform minion in this.minions)
+        {
+            if(minion.gameObject.activeSelf == false)
+            {
+                this.minions.Remove(minion);
+                return;
+            }
+        }
+    }
 }
