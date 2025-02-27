@@ -25,6 +25,11 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
     [SerializeField] private ObjectLookAtTarget objectLookAtTarget;
 
     public ObjectLookAtTarget ObjectLookAtTarget => objectLookAtTarget;
+
+    [SerializeField] private Spawner spawner;
+
+    public Spawner Spawner => spawner;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -34,6 +39,7 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         this.LoadObjectShooting();
         this.LoadObjMovement();
         this.LoadObjLookAtTarget();
+        this.LoadSpawner();
     }
 
     protected virtual void LoadModel()
@@ -76,6 +82,12 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         string resPath = "ShootableObject/"+ this.GetObjectTypeString() + "/" + transform.name;
         this.shootableObject = Resources.Load<ShootableObjectSO>(resPath);
         Debug.LogWarning(transform.name + ":Load ShootableObjectSO" + resPath, gameObject);
+    }
+    protected virtual void LoadSpawner()
+    {
+        if (this.spawner != null) return;
+        this.spawner = this.transform.parent?.parent?.GetComponent<Spawner>();
+        Debug.Log(transform.name + ": LoadSpawner", gameObject);
     }
 
     protected abstract string GetObjectTypeString();
