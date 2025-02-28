@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class ShipController : ThanguMonoBehavior
+public class ShipController : AbilityObjectController
 {
     [SerializeField] protected Inventory inventory;
 
     public Inventory Inventory => inventory;
+
+    protected override string GetObjectTypeString()
+    {
+        return ObjectType.Ship.ToString();
+    }
 
     protected override void LoadComponents()
     {

@@ -87,7 +87,7 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
     {
         if (this.spawner != null) return;
         this.spawner = this.transform.parent?.parent?.GetComponent<Spawner>();
-        Debug.Log(transform.name + ": LoadSpawner", gameObject);
+        Debug.LogWarning(transform.name + ": LoadSpawner", gameObject);
     }
 
     protected abstract string GetObjectTypeString();

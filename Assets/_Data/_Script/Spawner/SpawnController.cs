@@ -25,7 +25,7 @@ public class SpawnController : ThanguMonoBehavior
     protected virtual void LoadSpawnPoint()
     {
         if (this.spawnPoint != null) return;
-        this.spawnPoint = Transform.FindAnyObjectByType<SpawnPoint>();
+        this.spawnPoint = GameObject.Find("SceneSpawnPoint").GetComponent<SpawnPoint>();
         Debug.Log(transform.name + ": LoadSpawnPoint", gameObject);
     }
 }
