@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class DropRate
+public class ItemDropRate
 {
     public ItemProfileSO itemProfileSO;
     public int dropRate;

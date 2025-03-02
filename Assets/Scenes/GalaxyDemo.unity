@@ -1008,7 +1008,7 @@ MonoBehaviour:
   objectMovement: {fileID: 1753951567}
   objectLookAtTarget: {fileID: 1569289578}
   spawner: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1672147405}
   inventory: {fileID: 892203725}
 --- !u!1 &307681935
 GameObject:
@@ -1210,7 +1210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &408953640
 Transform:
   m_ObjectHideFlags: 0
@@ -2106,6 +2106,7 @@ MonoBehaviour:
   poolObjs: []
   holderPool: {fileID: 1250912310}
   spawnerCount: 0
+  gameDropRate: 1
 --- !u!1 &613283569
 GameObject:
   m_ObjectHideFlags: 0
