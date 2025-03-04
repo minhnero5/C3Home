@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ItemDropSpawner : Spawner
@@ -6,7 +7,7 @@ public class ItemDropSpawner : Spawner
     private static ItemDropSpawner instance;
     public static ItemDropSpawner Instance => instance;
 
-    [SerializeField] protected float gameDropRate=1;
+    [SerializeField] protected float gameDropRate = 1;
     protected override void Awake()
     {
         base.Awake();
@@ -34,12 +35,25 @@ public class ItemDropSpawner : Spawner
     protected virtual List<ItemDropRate> DropItem(List<ItemDropRate> items)
     {
         List<ItemDropRate> droppedItems=new List<ItemDropRate>();
-        float rate,itemRate;
-
+        float rate, itemRate;
+        int itemDropMore;
         foreach (ItemDropRate item in items)
         {
-            rate = Random.Range(0, 1f);
-            itemRate = item.dropRate * this.gameDropRate;
+            rate = UnityEngine.Random.Range(0, 1f);
+            itemRate = item.dropRate/100000f * this.GetGameDropRate();
+
+            itemDropMore = Mathf.FloorToInt(itemRate);
+            if (itemDropMore > 0)
+            {
+                itemRate -= itemDropMore;
+                for (int i = 0; i < itemDropMore; i++)
+                {
+                    droppedItems.Add(item);
+                }
+            }
+            Debug.Log("Item: " + item.itemProfileSO.itemName);
+            Debug.Log("Rate: " + itemRate + "/" + rate);
+            Debug.Log("ItemDropMore: " + itemDropMore);
             if (rate<=itemRate)
             {
                 droppedItems.Add(item);
@@ -48,6 +62,10 @@ public class ItemDropSpawner : Spawner
         return droppedItems;
     }
 
+    protected virtual float GetGameDropRate()
+    {
+        return this.gameDropRate;
+    }
     public virtual Transform DropFromInventory(ItemInventory itemInventory, Vector3 pos, Quaternion rot)
     {
         ItemCode itemCode = itemInventory.itemProfileSO.itemCode;

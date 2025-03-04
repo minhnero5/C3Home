@@ -880,7 +880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &235910561
 Transform:
   m_ObjectHideFlags: 0
@@ -2254,7 +2254,7 @@ MonoBehaviour:
   poolObjs: []
   holderPool: {fileID: 1250912310}
   spawnerCount: 0
-  gameDropRate: 1
+  gameDropRate: 10
 --- !u!1 &613283569
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,6 +3537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   junkController: {fileID: 460575964}
+  dropCount: 0
+  dropCountItems: []
 --- !u!1 &1090509309
 GameObject:
   m_ObjectHideFlags: 0
