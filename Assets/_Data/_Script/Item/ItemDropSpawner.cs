@@ -51,9 +51,9 @@ public class ItemDropSpawner : Spawner
                     droppedItems.Add(item);
                 }
             }
-            Debug.Log("Item: " + item.itemProfileSO.itemName);
-            Debug.Log("Rate: " + itemRate + "/" + rate);
-            Debug.Log("ItemDropMore: " + itemDropMore);
+            //Debug.Log("Item: " + item.itemProfileSO.itemName);
+            //Debug.Log("Rate: " + itemRate + "/" + rate);
+            //Debug.Log("ItemDropMore: " + itemDropMore);
             if (rate<=itemRate)
             {
                 droppedItems.Add(item);
