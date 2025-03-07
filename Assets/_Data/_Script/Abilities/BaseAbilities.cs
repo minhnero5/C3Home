@@ -7,19 +7,24 @@ public abstract class BaseAbilities : ThanguMonoBehavior
 
     [SerializeField] protected float timer = 2f;
     [SerializeField] protected float delay = 2f;
-    [SerializeField] protected bool isRead = false;
+    [SerializeField] protected bool isReady = false;
 
     protected virtual void FixedUpdate()
     {
         this.Timing();
     }
 
+    protected virtual void Update()
+    {
+        
+    }
+
     protected virtual void Timing()
     {
-        if (this.isRead) return;
+        if (this.isReady) return;
         this.timer += Time.deltaTime ;
         if (this.timer < this.delay) return;
-        this.isRead = true;
+        this.isReady = true;
     }
 
     protected override void LoadComponents()
@@ -36,7 +41,7 @@ public abstract class BaseAbilities : ThanguMonoBehavior
 
     public virtual void Active()
     {
-        this.isRead = false;
+        this.isReady = false;
         this.timer = 0;
     }
 }
