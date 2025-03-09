@@ -7,6 +7,8 @@ public class AbilityWarp : BaseAbilities
     [SerializeField] protected bool isWarping = false;
     [SerializeField] private Vector4 warpDirection;
     [SerializeField] private float warpSpeed;
+    [SerializeField] private float warpDistance;
+
     protected override void Update()
     {
         base.Update();
@@ -17,6 +19,7 @@ public class AbilityWarp : BaseAbilities
     {
         base.FixedUpdate();
         this.Warping();
+        
     }
     protected virtual void CheckDirectionWarping()
     {
@@ -27,6 +30,7 @@ public class AbilityWarp : BaseAbilities
         if (this.keyDirection.y == 1) this.WarpRight();
         if (this.keyDirection.z == 1) this.WarpUp();
         if (this.keyDirection.w == 1) this.WarpDown();
+        
     }
 
     protected virtual void Warping()
@@ -50,10 +54,49 @@ public class AbilityWarp : BaseAbilities
 
     protected virtual void WarpFinish()
     {
+        this.MoveObj();
         Debug.LogWarning("<b>WarpFinish</b>");
         this.warpDirection.Set(0, 0, 0, 0);
         this.isWarping = false;
         this.Active();
+    }
+
+    protected virtual void MoveObj()
+    {
+        Transform obj = this.abilities.AbilityController.transform;
+        Vector3 newPos = obj.position;
+        if (this.warpDirection.x == 1)
+        {
+            newPos.x -= this.warpDistance;
+           //
+        }
+        if (this.warpDirection.y == 1) newPos.x += this.warpDistance;
+        if (this.warpDirection.z == 1) newPos.y += this.warpDistance;
+        if (this.warpDirection.w == 1) newPos.y -= this.warpDistance;
+
+        Quaternion fxRot = this.GetFxQuaternion();
+        Transform fx = FXSpawner.Instance.Spawn(FXSpawner.impact1, obj.position, fxRot);
+        fx.gameObject.SetActive(true);
+        obj.position = newPos;
+        
+    }
+
+    protected virtual Quaternion GetFxQuaternion()
+    {
+        Vector3 vector = new Vector3();
+
+        if (this.warpDirection.x == 1) vector.z = 180;
+        if (this.warpDirection.y == 1) vector.z = 0;
+        if (this.warpDirection.z == 1) vector.z = 90;
+        if (this.warpDirection.w == 1) vector.z = -90;
+
+
+        if (this.warpDirection.x == 1 && this.warpDirection.w == 1) vector.z = 45;
+        if (this.warpDirection.y == 1 && this.warpDirection.w == 1) vector.z = 135;
+        if (this.warpDirection.x == 1 && this.warpDirection.z == 1) vector.z = -45;
+        if (this.warpDirection.y == 1 && this.warpDirection.z == 1) vector.z = -135;
+        return Quaternion.Euler(vector);
+
     }
     protected virtual void WarpLeft()
     {
