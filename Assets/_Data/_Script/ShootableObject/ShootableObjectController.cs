@@ -30,6 +30,11 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
 
     public Spawner Spawner => spawner;
 
+    [SerializeField] private DamageReceiver damageReceiver;
+
+    public DamageReceiver DamageReceiver => damageReceiver;
+
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -40,6 +45,7 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         this.LoadObjMovement();
         this.LoadObjLookAtTarget();
         this.LoadSpawner();
+        this.LoadDamageReciever();
     }
 
     protected virtual void LoadModel()
@@ -88,6 +94,13 @@ public abstract class ShootableObjectController : ThanguMonoBehavior
         if (this.spawner != null) return;
         this.spawner = this.transform.parent?.parent?.GetComponent<Spawner>();
         Debug.LogWarning(transform.name + ": LoadSpawner", gameObject);
+    }
+
+    protected virtual void LoadDamageReciever()
+    {
+        if (this.damageReceiver != null) return;
+        this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
+        Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
     }
 
     protected abstract string GetObjectTypeString();
