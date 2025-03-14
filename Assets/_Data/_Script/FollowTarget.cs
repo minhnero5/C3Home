@@ -16,4 +16,9 @@ public class FollowTarget : ThanguMonoBehavior
         if (this.target == null) Debug.LogError("No target",gameObject);
         transform.position = Vector3.Lerp(transform.position, this.target.position, speed * Time.fixedDeltaTime);
     }
+
+    public virtual void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
 }

@@ -5,6 +5,7 @@ public class HPBar : ThanguMonoBehavior
 {
     [SerializeField] protected ShootableObjectController shootableObjectController;
     [SerializeField] protected SliderHP sliderHP;
+    [SerializeField] protected FollowTarget followTarget;
 
     protected virtual void FixedUpdate()
     {
@@ -16,6 +17,7 @@ public class HPBar : ThanguMonoBehavior
     {
         base.LoadComponents();
         this.LoadSliderHP();
+        this.LoadFollowTarget();
     }
     protected virtual void HPShowing()
     {
@@ -31,6 +33,11 @@ public class HPBar : ThanguMonoBehavior
     {
         this.shootableObjectController = shootableObjectController;
     }
+
+    public virtual void SetFollowTarget(Transform target)
+    {
+        this.followTarget.SetTarget(target);
+    }
     protected virtual void LoadSliderHP()
     {
         if (this.sliderHP != null) return;
@@ -38,5 +45,11 @@ public class HPBar : ThanguMonoBehavior
         Debug.LogWarning(transform.name + ": LoadSliderHP", gameObject);
     }
 
+    protected virtual void LoadFollowTarget()
+    {
+        if (this.followTarget != null) return;
+        this.followTarget = transform.GetComponent<FollowTarget>();
+        Debug.LogWarning(transform.name + ": LoadFollowTarget", gameObject);
+    }
 
 }

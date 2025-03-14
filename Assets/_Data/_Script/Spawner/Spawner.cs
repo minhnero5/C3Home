@@ -62,7 +62,7 @@ public abstract class Spawner : ThanguMonoBehavior
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
 
-        newPrefab.parent = this.holderPool;
+        newPrefab.SetParent(this.holderPool);
         this.spawnerCount++;
         return newPrefab;
     }
