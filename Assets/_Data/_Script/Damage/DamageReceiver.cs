@@ -57,7 +57,7 @@ public abstract class DamageReceiver : ThanguMonoBehavior
         this.CheckIsDead();
     }
 
-    protected virtual bool IsDead()
+    public virtual bool IsDead()
     {
         return this.hp <= 0;
     }

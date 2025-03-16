@@ -1697,6 +1697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootableObjectController: {fileID: 0}
   sliderHP: {fileID: 845355222}
+  followTarget: {fileID: 470713314}
+  spawner: {fileID: 1979290847}
 --- !u!1 &470844658
 GameObject:
   m_ObjectHideFlags: 0
@@ -7136,9 +7138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b047227e259b5f40a0e962bdc094c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
+  points: []
 --- !u!1 &1801223669
 GameObject:
   m_ObjectHideFlags: 0
