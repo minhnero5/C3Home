@@ -18,7 +18,12 @@ public class UIInventory : ThanguMonoBehavior
     protected override void Start()
     {
         base.Start();
-        this.Close();
+        //this.Close();
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        this.ShowItem();
     }
     public virtual void Toggle()
     {
@@ -37,5 +42,12 @@ public class UIInventory : ThanguMonoBehavior
     {
         gameObject.SetActive(false);
         this.isOpen = false;
+    }
+
+    protected virtual void ShowItem()
+    {
+        if (!this.isOpen) return;
+        float itemCount = PlayerController.Instance.CurrentShip.Inventory.Items.Count;
+        Debug.Log("itemCount: " + itemCount);
     }
 }
