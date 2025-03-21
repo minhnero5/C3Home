@@ -39,4 +39,25 @@ public class UIInventoryItemSpawner : Spawner
         this.inventoryController = transform.parent.GetComponent<UIInventoryController>();
         Debug.LogWarning(transform.name + ": LoadUIInventoryControllertent", gameObject);
     }
+
+    public virtual void ClearItems()
+    {
+        foreach (Transform item in this.holderPool)
+        {
+            this.Despawn(item);
+        }
+    }
+
+    public virtual void SpawnItems(ItemInventory item)
+    {
+        Transform uiItem = this.inventoryController.UIInventoryItemSpawner.Spawn(UIInventoryItemSpawner.normalItem, Vector3.zero, Quaternion.identity);
+        uiItem.transform.localScale = new Vector3(1, 1, 1);
+
+        UIItemInventory itemInventory = uiItem.GetComponent<UIItemInventory>();
+        itemInventory.ShowItem(item);
+
+        uiItem.gameObject.SetActive(true);
+    }
+
+
 }

@@ -1062,6 +1062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 231429450}
+  - component: {fileID: 231429451}
   m_Layer: 5
   m_Name: UIItem
   m_TagString: Untagged
@@ -1090,6 +1091,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &231429451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231429449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd03c55dc5c41ad408f39cf51e168ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: {fileID: 0}
+  itemNumber: {fileID: 0}
 --- !u!1 &235910560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,10 +5484,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1103502996}
-  - component: {fileID: 1103502997}
   - component: {fileID: 1103502998}
   m_Layer: 5
-  m_Name: UIInventory
+  m_Name: UIInventoryController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5490,6 +5504,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1177494266}
   - {fileID: 1203603050}
   - {fileID: 743878552}
   - {fileID: 513745953}
@@ -5501,18 +5516,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1103502997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103502995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db32e4af545e2264aafd621a20e076ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1103502998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5526,7 +5529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 248143303}
-  inventoryItemSpawner: {fileID: 0}
+  inventoryItemSpawner: {fileID: 1203603051}
 --- !u!1 &1113418859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5842,6 +5845,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172153417}
   m_CullTransparentMesh: 1
+--- !u!1 &1177494265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177494266}
+  - component: {fileID: 1177494267}
+  m_Layer: 0
+  m_Name: UIInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177494266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177494265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103502996}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177494267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177494265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db32e4af545e2264aafd621a20e076ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryController: {fileID: 1103502998}
 --- !u!1 &1203603049
 GameObject:
   m_ObjectHideFlags: 0
@@ -5890,9 +5938,9 @@ MonoBehaviour:
   prefabs:
   - {fileID: 231429450}
   poolObjs: []
-  holderPool: {fileID: 0}
+  holderPool: {fileID: 248143303}
   spawnerCount: 0
-  inventoryController: {fileID: 0}
+  inventoryController: {fileID: 1103502998}
 --- !u!1 &1234809489
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class UIInventory : ThanguMonoBehavior
+public class UIInventory : UIInventoryAbstract
 {
     private static UIInventory instance;
 
     public static UIInventory Instance => instance;
 
-    protected bool isOpen = false;
+    protected bool isOpen = true;
 
     protected override void Awake()
     {
@@ -17,14 +18,17 @@ public class UIInventory : ThanguMonoBehavior
     }
     protected override void Start()
     {
-        base.Start();
+        base.Start(); 
+
+        InvokeRepeating(nameof(this.ShowItem),1,1);
         //this.Close();
     }
 
     protected virtual void FixedUpdate()
     {
-        this.ShowItem();
+        //this.ShowItem();
     }
+
     public virtual void Toggle()
     {
         this.isOpen = !this.isOpen;
@@ -34,20 +38,31 @@ public class UIInventory : ThanguMonoBehavior
 
     public virtual void Open()
     {
-        gameObject.SetActive(true);
+        this.UIInventoryController.gameObject.SetActive(true);
         this.isOpen = true;
     }
 
     public virtual void Close()
     {
-        gameObject.SetActive(false);
+        this.UIInventoryController.gameObject.SetActive(false);
         this.isOpen = false;
     }
 
     protected virtual void ShowItem()
     {
         if (!this.isOpen) return;
-        float itemCount = PlayerController.Instance.CurrentShip.Inventory.Items.Count;
-        Debug.Log("itemCount: " + itemCount);
+        this.ClearItems();
+        List<ItemInventory> items = PlayerController.Instance.CurrentShip.Inventory.Items;
+        UIInventoryItemSpawner spawner = this.inventoryController.UIInventoryItemSpawner;
+        foreach (ItemInventory item in items) 
+        {
+            spawner.SpawnItems(item);
+        }
+
+    }
+
+    protected virtual void ClearItems()
+    {
+        this.inventoryController.UIInventoryItemSpawner.ClearItems();
     }
 }
