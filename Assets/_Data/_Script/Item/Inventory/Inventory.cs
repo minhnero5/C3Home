@@ -130,6 +130,7 @@ public class Inventory : ThanguMonoBehavior
     {
         ItemInventory itemInventory = new ItemInventory
         {
+            itemID= ItemInventory.RandomID(),
             itemProfileSO = itemProfileSO,
             maxStack = itemProfileSO.defaultMaxStack
         };

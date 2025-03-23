@@ -4,6 +4,9 @@ using UnityEngine.UI;
 public class UIItemInventory : ThanguMonoBehavior
 {
 
+    [SerializeField] protected ItemInventory itemInventory;
+    public ItemInventory ItemInventory => itemInventory;
+
     [SerializeField] protected Text itemName;
     public Text ItemName => itemName;
 
@@ -34,6 +37,7 @@ public class UIItemInventory : ThanguMonoBehavior
 
     public virtual void ShowItem(ItemInventory item)
     {
+        this.itemInventory = item;
         this.itemName.text = item.itemProfileSO.itemName;
         this.itemNumber.text = item.itemCount.ToString();
     }

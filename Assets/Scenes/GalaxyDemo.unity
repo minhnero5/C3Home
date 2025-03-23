@@ -1103,8 +1103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd03c55dc5c41ad408f39cf51e168ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: {fileID: 0}
-  itemNumber: {fileID: 0}
+  itemInventory:
+    itemProfileSO: {fileID: 0}
+    itemCount: 0
+    maxStack: 7
+    upgradeLevel: 0
+  itemName: {fileID: 963012281}
+  itemNumber: {fileID: 48339847}
 --- !u!1 &235910560
 GameObject:
   m_ObjectHideFlags: 0
