@@ -1104,6 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInventory:
+    itemID: 
     itemProfileSO: {fileID: 0}
     itemCount: 0
     maxStack: 7
@@ -1586,6 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 1717416475}
   itemInventory:
+    itemID: 
     itemProfileSO: {fileID: 0}
     itemCount: 0
     maxStack: 7
@@ -5430,6 +5432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 18408070}
   itemInventory:
+    itemID: 
     itemProfileSO: {fileID: 0}
     itemCount: 0
     maxStack: 7
@@ -5895,6 +5898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryController: {fileID: 1103502998}
+  inventorySort: 0
 --- !u!1 &1203603049
 GameObject:
   m_ObjectHideFlags: 0
@@ -6831,6 +6835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDespawn: {fileID: 758894497}
   itemInventory:
+    itemID: 
     itemProfileSO: {fileID: 0}
     itemCount: 0
     maxStack: 7
