@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [CreateAssetMenu(fileName ="Item",menuName ="SO/Item")]
@@ -10,6 +11,7 @@ public class ItemProfileSO : ScriptableObject
     public ItemType itemType = ItemType.NoType;
     public string itemName = "no-name";
     public int defaultMaxStack = 7;
+    public Sprite sprite;
     public List<ItemRecipe> upgradeLevel;
 
 
