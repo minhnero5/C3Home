@@ -5976,7 +5976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryController: {fileID: 1103502998}
-  inventorySort: 0
+  inventorySort: 1
 --- !u!1 &1203603049
 GameObject:
   m_ObjectHideFlags: 0
