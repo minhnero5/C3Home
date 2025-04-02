@@ -3,9 +3,11 @@ using UnityEngine.EventSystems;
 
 public class DragItem : ThanguMonoBehavior, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    [SerializeField] protected Transform realParent;
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //throw new System.NotImplementedException();
+        this.realParent = transform.parent;
+        transform.parent = UIHotkeyController.Instance.transform;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -18,6 +20,7 @@ public class DragItem : ThanguMonoBehavior, IBeginDragHandler, IEndDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         //throw new System.NotImplementedException();
+        transform.parent = this.realParent;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
