@@ -89,3 +89,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realParent: {fileID: 0}
+  image: {fileID: 0}
