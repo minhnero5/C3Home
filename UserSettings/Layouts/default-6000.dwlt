@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 79
+  controlID: 51
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -1219,7 +1219,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1320
+  m_LastSelectedObjectID: -1424
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1494,10 +1494,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 867}
+    scrollPos: {x: 0, y: 859}
     m_SelectedIDs: ccb80000
     m_LastClickedID: 47308
-    m_ExpandedIDs: 00000000dab70000dcb70000deb70000e0b70000e2b70000e4b70000e6b70000e8b70000eab70000ecb70000eeb70000f0b70000f2b70000f4b70000f6b70000f8b70000fab70000fcb70000feb7000000b8000002b8000004b8000006b8000008b800000ab800000cb800000eb80000
+    m_ExpandedIDs: 00000000eab70000ecb70000eeb70000f0b70000f2b70000f4b70000f6b70000f8b70000fab70000fcb70000feb7000000b8000002b8000004b8000006b8000008b800000ab800000cb800000eb8000010b8000012b8000014b8000016b8000018b800001ab800001cb800001eb80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1526,7 +1526,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dab70000dcb70000deb70000e0b70000e2b70000e4b70000e6b70000e8b70000eab70000ecb70000eeb70000f0b70000f2b70000f4b70000f6b70000f8b70000fab70000fcb70000feb7000000b8000002b8000004b8000006b8000008b800000ab800000cb800000eb80000
+    m_ExpandedIDs: 00000000eab70000ecb70000eeb70000f0b70000f2b70000f4b70000f6b70000f8b70000fab70000fcb70000feb7000000b8000002b8000004b8000006b8000008b800000ab800000cb800000eb8000010b8000012b8000014b8000016b8000018b800001ab800001cb800001eb80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1626,7 +1626,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e2faffff
+      m_ExpandedIDs: 70faffffe2faffffcab1000034b200002ab30000c4b30000eab30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

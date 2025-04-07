@@ -11,12 +11,17 @@ public class OnPressAlpha : ThanguMonoBehavior
 
     protected virtual void CheckAlphaIsPress()
     {
-        if (InputHokeyManager.Instance.isPress1) Debug.Log("1");
-        if (InputHokeyManager.Instance.isPress2) Debug.Log("2");
-        if (InputHokeyManager.Instance.isPress3) Debug.Log("3");
-        if (InputHokeyManager.Instance.isPress4) Debug.Log("4");
-        if (InputHokeyManager.Instance.isPress5) Debug.Log("5");
-        if (InputHokeyManager.Instance.isPress6) Debug.Log("6");
-        if (InputHokeyManager.Instance.isPress7) Debug.Log("7");
+        if (InputHokeyManager.Instance.isPress1) this.Press(1);
+        if (InputHokeyManager.Instance.isPress2) this.Press(2);
+        if (InputHokeyManager.Instance.isPress3) this.Press(3);
+        if (InputHokeyManager.Instance.isPress4) this.Press(4);
+        if (InputHokeyManager.Instance.isPress5)  this.Press(5);
+        if (InputHokeyManager.Instance.isPress6)  this.Press(6);
+        if (InputHokeyManager.Instance.isPress7) this.Press(7);
+    }
+
+    protected virtual void Press(int press)
+    {
+        Debug.Log(press);
     }
 }
